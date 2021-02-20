@@ -7,4 +7,4 @@
   - 并发控制
   - 错误重试
   - 文件类型控制
-- 虚拟滚动列表
+- 虚拟滚动列表(更详细的参考[vue2_share](https://github.com/zxlfly/vue2_share))
