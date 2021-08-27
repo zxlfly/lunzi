@@ -1,0 +1,22 @@
+{
+  "name": "http-request",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "ts-node-dev server.ts",
+    "serve2": "ts-node-dev server2.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^16.7.2",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.2",
+    "ts-node-dev": "^1.1.8"
+  },
+  "dependencies": {
+    
+  }
+}
