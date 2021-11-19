@@ -1,0 +1,24 @@
+{
+  "name": "web2",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.13.6",
+    "@nuxtjs/proxy": "^2.1.0",
+    "axios": "^0.24.0",
+    "core-js": "^3.15.1",
+    "element-ui": "^2.15.2",
+    "md5": "^2.3.0",
+    "nuxt": "^2.15.7",
+    "spark-md5": "^3.0.2",
+    "styles": "^0.2.1",
+    "stylus": "^0.55.0"
+  },
+  "devDependencies": {}
+}
