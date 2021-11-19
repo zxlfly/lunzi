@@ -1,15 +1,14 @@
 # 轮子
 
 # project-web
-## web（使用的nuxt2）
-## server(egg.js)
-## 规范使用的huskt、commitizen、validate-commit-msg
+### web（使用的nuxt2）
+### server(egg.js)
+### 规范使用的huskt、commitizen、validate-commit-msg
 - 文件上传
   - 切片上传
   - 断点续传
   - 并发控制
   - 错误重试
-  - 文件类型控制
 - 限制图片格式
 - 登录
   - jwt
