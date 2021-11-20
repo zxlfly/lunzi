@@ -12,7 +12,6 @@
 ### ``uploadsampling``抽样hash
 2m为单位，头部取2m，中间的取前中后2个字节，余下的尾部的全要  
 抽样hash值不变的情况下不一定没有发生改变，变了就一定改变了。  
-可以将算出来的hash加上用户id（或者将id带进去算hash），将误差控制在用户个体级别内。
 ### ``uploadslice``切片上传
 前面已经实现了文件切片，只需要将对应的切片内容转换成formdate（``let form = new FormData() form.append("name", chunk.name)......``）即可。上传之后后台接受完成，前端需要调到合并接口。
 ### ``uploadsp``秒传/断点续传
@@ -30,4 +29,9 @@
 @todo（不重要...）
 使用husky限制在commit时跑lint和test；使用commitizen规范提交信息
 
-## 文本编辑器（marked）
+## 文本编辑器
+- marked
+- highlightjs
+
+## 富文本编辑器
+@todo
