@@ -5,7 +5,7 @@
 /**
  * @param {Egg.EggAppInfo} appInfo app info
  */
-const path = require('path')
+const path = require('path');
 module.exports = appInfo => {
   /**
    * built-in config
@@ -16,11 +16,11 @@ module.exports = appInfo => {
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1637143895661_4485';
 
-  config.multipart={
-    mode:'file',
-    whitelist:()=>true
-  }
-  config.UPLOAD_DIR = path.resolve(__dirname,"..","app/public")
+  config.multipart = {
+    mode: 'file',
+    whitelist: () => true,
+  };
+  config.UPLOAD_DIR = path.resolve(__dirname, '..', 'app/public');
   // add your middleware config here
   config.middleware = [];
 
@@ -43,8 +43,8 @@ module.exports = appInfo => {
         options: {},
       },
     },
-    jwt:{
-      secret:'@proweb!666$$$$'
-    }
+    jwt: {
+      secret: '@proweb!666$$$$',
+    },
   };
 };
