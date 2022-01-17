@@ -65,3 +65,17 @@ bind 除了返回是函数以外，它 的参数和 call 一样
 将树拍平成一维数组,渲染的时候也不再需要递归了  
 ## 使用虚拟滚动
 虚拟滚动列表(更详细的参考[vue2_share](https://github.com/zxlfly/vue2_share))
+
+# 前端异常监控系统exception monitoring
+- 搜集前端错误
+  - ``unhandledrejection``
+    - ``event.reason``
+  - ``error``
+- 错误上报
+- 错误日志采集服务
+- 编写webpack插件上传sourcemap
+- 利用sourcemap还原压缩代码位置
+  - 需要使用下面插件
+  - ``error-stack-parser``
+  - ``source-map``
+- 单元测试

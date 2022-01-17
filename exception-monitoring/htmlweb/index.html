@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zxl</title>
+    <script>
+        function uploadErroe(event) {
+            const api = 'http://localhost:7001/monitor/error'
+            const target = event.target
+            let errorMsg
+            if (target !== window) {
+                // 资源错误
+                errorMsg = {
+                    type: target.localName,
+                    url: target.src || target.href || target.baseURI,
+                    outerHTML: target.outerHTML
+                }
+
+            } else {
+                // 程序错误
+                errorMsg = {
+                    url: event.filename,
+                    colno: event.colno,
+                    lineno: event.lineno,
+                    message: event.message,
+                    error: event.error
+                }
+            }
+            const str = window.btoa(JSON.stringify(errorMsg))
+            console.log(str);
+            // 如果长度超过限制需要使用ajax提交
+            new Image().src = `${api}?info=${str}`
+        }
+        // 同步异步资源加载都可以监听
+        window.addEventListener('error', function (event) {
+            console.log('error:', event.target == window, event);
+            // 上报服务器
+            uploadErroe(event)
+        }, true)
+        // promise async/await 可以监听
+        window.addEventListener('unhandledrejection', event => {
+            // console.log('unhandledrejection:', event);
+            // 将错误抛给error统一处理
+            throw event.reason
+        }, true)
+        const asyncFn = () => new Promise((resolve) => {
+            zzz
+        })
+        setTimeout(async () => {
+            await asyncFn()
+        })
+        zll
+    </script>
+    <link rel="stylesheet" href="666.css">
+    <script src="666.js"></script>
+</head>
+
+<body>
+    <img src="sd.jpg" alt="">
+
+</body>
+
+</html>
