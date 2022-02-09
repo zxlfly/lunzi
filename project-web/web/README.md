@@ -13,7 +13,7 @@
 2m为单位，头部取2m，中间的取前中后2个字节，余下的尾部的全要  
 抽样hash值不变的情况下不一定没有发生改变，变了就一定改变了。  
 ### ``uploadslice``切片上传
-前面已经实现了文件切片，只需要将对应的切片内容转换成formdate（``let form = new FormData() form.append("name", chunk.name)......``）即可。上传之后后台接受完成，前端需要调到合并接口。
+前面已经实现了文件切片，只需要将对应的切片内容转换成formdate（``let form = new FormData() form.append("name", chunk.name)......``）即可。上传之后后台接受完成，前端需要调用合并接口。
 ### ``uploadsp``秒传/断点续传
 - 算完hash，切片之后询问后端是否上传过，或者上传了一部分
   - 服务器存在对应文件

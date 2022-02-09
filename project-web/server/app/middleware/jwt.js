@@ -13,14 +13,13 @@ module.exports = ({ app }) => {
     const token = ctx.request.header.authorization.replace('Bearer ', '');
     try {
       const ret = await jwt.verify(token, app.config.jwt.secret);
-      ctx.state.email = ret.email;
       ctx.state.userid = ret._id;
       await next();
     } catch (err) {
       console.log(err);
       if (err.name === 'TokenExpiredError') {
         ctx.body = {
-          code: -666,
+          code: -1,
           message: '登录已过期',
         };
       } else {
