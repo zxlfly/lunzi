@@ -76,3 +76,33 @@ const deelClone = (obj) => {
     }
     return cloneObj(obj)
 }
+
+
+
+
+function deepCloneSimple(target) {
+    let newObj; // 定义一个变量，准备接新副本对象
+    // 如果当前需要深拷贝的是一个引用类型对象
+    if (typeof target === 'object') {
+        if (Array.isArray(target)) {// 如果是一个数组
+            newObj = []; // 将newObj赋值为一个数组，并遍历
+            for (let i in target) { // 递归克隆数组中的每一项
+                newObj.push(deepCloneSimple(target[i]))
+            }
+            // 判断如果当前的值是null；直接赋值为null 
+        } else if (target === null) {
+            newObj = null;
+            // 判断如果当前的值是一个正则表达式对象，直接赋值
+        } else if (target.constructor === RegExp) {
+            newObj = target;
+        } else {
+            // 否则是普通对象，直接for in循环递归遍历复制对象中每个属性值
+            newObj = {};
+            for (let i in target) {
+                newObj[i] = deepCloneSimple(target[i]);
+            }
+        }
+        // 如果不是对象而是原始数据类型，那么直接赋值
+    } else { newObj = target; }
+    // 返回最终结果 return newObj; 
+}
