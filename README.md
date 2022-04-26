@@ -79,3 +79,6 @@ bind 除了返回是函数以外，它 的参数和 call 一样
   - ``error-stack-parser``
   - ``source-map``
 - 单元测试
+
+# 获取出现dom节点最多的元素
+getMAxDom
