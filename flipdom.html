@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <ul class="container">
+    <li>加</li>
+    <li>油</li>
+    <li>优</li>
+    <li>秀</li>
+  </ul>
+  <script>
+    // 倒序的三种方式
+    const lis = document.querySelectorAll(".container>li");
+    // 直接循环
+    for (let i = lis.length - 1; i > -1; i--) {
+      console.log(i);
+      document.querySelector(".container").appendChild(lis[i]);
+    }
+			// 利用Fragment
+			// var frag = document.createDocumentFragment()
+			// for (let i = lis.length - 1; i > -1; i--) {
+			// 	frag.appendChild(lis[i])
+			// }
+			// console.log('frag',frag);
+			// document.querySelectorAll('.container')[0].appendChild(frag)
+			// // 使用range
+			// var f =document.createDocumentFragment()
+			// for (let i = lis.length - 1; i > -1; i--) {
+			// 	let rangeObj=document.createRange();
+			// 	rangeObj.setStartBefore(lis[i]);
+			// 	rangeObj.setEndAfter(lis[i]);
+			// 	f.appendChild(rangeObj.extractContents())
+			// }
+			// console.log(f);
+			// document.querySelectorAll('.container')[0].appendChild(f)
+			// // 获取元素标签类型和数量
+			// var map = {};
+			// function findNodes(node) {
+			// 	if (node.nodeType === 1) {
+			// 		var tagName = node.nodeName;
+			// 		map[tagName] = map[tagName] ? map[tagName] + 1 : 1;
+			// 	}
+			// 	var children = node.childNodes;
+			// 	for (var i = 0; i < children.length; i++) {
+			// 		findNodes(children[i])
+			// 	}
+			// }
+			// findNodes(document);
+			// console.log(map)
+  </script>
+</body>
+
+</html>

@@ -67,3 +67,4 @@ Accept-Language: zh-CN,zh;q=0.9,en;q=0.8
       - 最后客户端也close
   - 服务器收到后close
 
+# 从输入URL到页面显示发生了什么

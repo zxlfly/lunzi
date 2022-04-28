@@ -82,3 +82,5 @@ bind 除了返回是函数以外，它 的参数和 call 一样
 
 # 获取出现dom节点最多的元素
 getMAxDom
+# 翻转dom
+flipdom
