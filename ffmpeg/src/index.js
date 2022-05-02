@@ -49,12 +49,13 @@ for (let i = 0; i < chapterList.length; i++) {
 
     // console.log(sectionList[0].group_list[0].content_list[0].content.length);
     const groupInfo = sectionList[j].group_list[0]
-    const groupName = `${j + 1}、${groupInfo.group_name}`
+    let name = groupInfo.group_name.replace(/\//g, '-')
+    const groupName = `${j + 1}、${name}`
     const groupPath = `${chapterPath}/${groupName}`
     console.log(await checkPath(groupPath))
 
     const contentList = groupInfo.content_list
-    const fileName = groupPath + '/' + groupInfo.group_name + '.txt'
+    const fileName = groupPath + '/' + name + '.txt'
     for (let k = 0; k < contentList.length; k++) {
       // if(k) break
       const { content: contents, content_type, content_title } = contentList[k]
