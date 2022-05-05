@@ -86,3 +86,6 @@ getMAxDom
 flipdom
 # 爬视屏脚本
 ffmpeg
+# 性能监控
+[Navigation Timing API](https://developer.mozilla.org/zh-CN/docs/Web/API/Navigation_timing_API)  
+[performanceObserver](https://developer.mozilla.org/zh-CN/docs/Web/API/PerformanceObserver/PerformanceObserver)
