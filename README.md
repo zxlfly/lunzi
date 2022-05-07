@@ -89,3 +89,12 @@ ffmpeg
 # 性能监控
 [Navigation Timing API](https://developer.mozilla.org/zh-CN/docs/Web/API/Navigation_timing_API)  
 [performanceObserver](https://developer.mozilla.org/zh-CN/docs/Web/API/PerformanceObserver/PerformanceObserver)
+# star原则
+## situation
+现状
+## task
+目标
+## action
+执行 方案
+## result
+结果
