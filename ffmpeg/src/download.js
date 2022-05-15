@@ -6,6 +6,8 @@ import readline from 'readline'
   const array = []
 
   async function processLineByLine() {
+    // 如果不想手动输入全部路径
+    // 需要注意https://github.com/nodejs/help/issues/2907
     const fileStream = fs.createReadStream('allText.txt');
 
     const rl = readline.createInterface({
