@@ -98,3 +98,5 @@ ffmpeg
 执行 方案
 ## result
 结果
+
+# web终端适配主流方案

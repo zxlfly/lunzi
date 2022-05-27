@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 100vw;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      background-color: #ffce00;
+      color: #fff;
+    }
+
+    .tab__content {
+      background: #ff9500;
+    }
+
+    .card {
+      display: flex;
+      background: #ffffff;
+      position: relative;
+    }
+
+    .card__media {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .card__media img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      display: block;
+    }
+
+    .card__content {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card__content>* {
+      width: 100%;
+    }
+
+    .card__heading {
+      color: #000;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-weight: 900;
+    }
+
+    .card__body {
+      color: #5b5b5b;
+    }
+
+    .card__footer {
+      display: flex;
+      margin-top: auto;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 600;
+      border: none 0;
+      color: #fff;
+      border-radius: 10rem;
+      background-image: linear-gradient(180deg, #f74b4b 0%, #e32828 99%);
+    }
+
+    .card__price {
+      display: flex;
+      color: #5b5b5b;
+      align-items: flex-end;
+      line-height: 1;
+    }
+
+    .card__price--current {
+      font-weight: 600;
+      color: #ff1300;
+    }
+
+    .card__price--orgion {
+      text-decoration: none;
+      position: relative;
+      bottom: 0.1325em;
+    }
+
+    .card__price--orgion::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      background-color: currentColor;
+      z-index: 2;
+      top: 50%;
+      transform: translate3d(0, -50%, 0);
+    }
+
+    .card__badge {
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      background-image: linear-gradient(180deg, #f74b4b 0%, #e32828 99%);
+      font-weight: 600;
+    }
+
+    /* pixel */
+
+    :root {
+      --ideal-viewport-width: 750;
+      --current-viewport-width: 100vw;
+      --min-viewport-width: 320px;
+      --max-viewport-width: 1440px;
+      --clamped-viewport-width: clamp(var(--min-viewport-width),
+          var(--current-viewport-width),
+          var(--max-viewport-width));
+    }
+
+    body {
+      padding: calc(20 * var(--clamped-viewport-width) / var(--ideal-viewport-width));
+    }
+
+    .tab__content {
+      border-radius: calc(36 * var(--clamped-viewport-width) / var(--ideal-viewport-width));
+      padding: calc(22 * var(--clamped-viewport-width) / var(--ideal-viewport-width));
+      width: calc(702 * var(--clamped-viewport-width) / var(--ideal-viewport-width));
+    }
+
+    .card {
+      box-shadow: 0 calc(4 * var(--clamped-viewport-width) / var(--ideal-viewport-width)) calc(4 * var(--clamped-viewport-width) / var(--ideal-viewport-width)) 0 #ff5400,
+        inset 0 calc(-2 * var(--clamped-viewport-width) / var(--ideal-viewport-width)) 0 0 rgba(255, 255, 255, 0.51),
+        inset 0 calc(-7 * var(--clamped-viewport-width) / var(--ideal-viewport-width)) calc(6 * var(--clamped-viewport-width) / var(--ideal-viewport-width)) calc(3 * var(--clamped-viewport-width) / var(--ideal-viewport-width)) #ffcca4;
+      border-radius: calc(38 * var(--clamped-viewport-width) / var(--ideal-viewport-width));
+      padding: calc(24 * var(--clamped-viewport-width) / var(--ideal-viewport-width));
+    }
+
+    .card__media {
+      width: calc(170 * var(--clamped-viewport-width) / var(--ideal-viewport-width));
+      height: calc(170 * var(--clamped-viewport-width) / var(--ideal-viewport-width));
+      border-radius: calc(24 * var(--clamped-viewport-width) / var(--ideal-viewport-width));
+      margin-right: calc(20 * var(--clamped-viewport-width) / var(--ideal-viewport-width));
+    }
+
+    .card__media img {
+      border-radius: calc(24 * var(--clamped-viewport-width) / var(--ideal-viewport-width));
+    }
+
+    .card__heading {
+      font-size: calc(30 * var(--clamped-viewport-width) / var(--ideal-viewport-width));
+      margin-bottom: calc(6 * var(--clamped-viewport-width) / var(--ideal-viewport-width));
+    }
+
+    .card__body {
+      font-size: calc(24 * var(--clamped-viewport-width) / var(--ideal-viewport-width));
+    }
+
+    button {
+      min-width: calc(210 * var(--clamped-viewport-width) / var(--ideal-viewport-width));
+      min-height: calc(62 * var(--clamped-viewport-width) / var(--ideal-viewport-width));
+      padding: 0 calc(20 * var(--clamped-viewport-width) / var(--ideal-viewport-width));
+      font-size: calc(26 * var(--clamped-viewport-width) / var(--ideal-viewport-width));
+    }
+
+    .card__price {
+      font-size: calc(22 * var(--clamped-viewport-width) / var(--ideal-viewport-width));
+    }
+
+    .card__price--current {
+      font-size: calc(24 * var(--clamped-viewport-width) / var(--ideal-viewport-width));
+    }
+
+    .card__price--current span {
+      margin-right: calc(-4 * var(--clamped-viewport-width) / var(--ideal-viewport-width));
+    }
+
+    .card__price--current strong {
+      font-size: calc(46 * var(--clamped-viewport-width) / var(--ideal-viewport-width));
+    }
+
+    .card__price--orgion {
+      margin-left: calc(8 * var(--clamped-viewport-width) / var(--ideal-viewport-width));
+    }
+
+    .card__price--orgion::after {
+      height: calc(2 * var(--clamped-viewport-width) / var(--ideal-viewport-width));
+    }
+
+    .card__badge {
+      font-size: calc(24 * var(--clamped-viewport-width) / var(--ideal-viewport-width));
+      border-radius: calc(36 * var(--clamped-viewport-width) / var(--ideal-viewport-width)) 0 calc(36 * var(--clamped-viewport-width) / var(--ideal-viewport-width)) 0;
+      max-width: calc(146 * var(--clamped-viewport-width) / var(--ideal-viewport-width));
+      min-height: calc(42 * var(--clamped-viewport-width) / var(--ideal-viewport-width));
+    }
+  </style>
+</head>
+
+<body>
+  <div class="root">
+    <div class="tab__content">
+      <div class="card">
+        <div class="card__media">
+          <div class="media__object">
+            <img src="https://picsum.photos/800/800?random=2" alt="">
+          </div>
+        </div>
+        <div class="card__content">
+          <h3 class="card__heading">星巴克猫爪杯八个字</h3>
+          <p class="card__body">这是一段推荐文字九十一二三四五</p>
+          <div class="card__footer">
+            <div class="card__price">
+              <div class="card__price--current">
+                <span>&yen;</span>
+                <strong>1</strong>
+              </div>
+              <del class="card__price--orgion">&yen;280.06</del>
+            </div>
+            <button class="card__button">1元抢</button>
+          </div>
+          <div class="card__badge">本周特推</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
