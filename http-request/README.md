@@ -86,3 +86,5 @@ Accept-Language: zh-CN,zh;q=0.9,en;q=0.8
       - 最后客户端也close
   - 服务器收到后close
 
+# [HTTP 与 HTTPS 区别](https://www.runoob.com/w3cnote/http-vs-https.html)
+HTTPS 经由 HTTP 进行通信，但利用 SSL/TLS 来加密数据包。HTTPS 开发的主要目的，是提供对网站服务器的身份认证，保护交换数据的隐私与完整性。
