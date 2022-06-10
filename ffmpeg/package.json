@@ -6,12 +6,14 @@
   "type": "module",
   "scripts": {
     "start": "node ./src/index.js",
-    "download": "node ./src/download.js"
+    "download": "node ./src/download.js",
+    "p": "npm run start && npm run download"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.27.2"
+    "axios": "^0.27.2",
+    "https": "^1.0.0"
   }
 }
