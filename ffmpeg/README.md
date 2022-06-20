@@ -1,3 +1,5 @@
+需要安装[ffmpeg](http://ffmpeg.org/download.html)  
+
 // 点开一个课程的列表页面，从url复制过来。  
 export const course_id = xxxxx  
 
