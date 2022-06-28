@@ -8,7 +8,8 @@ import readline from 'readline'
   async function processLineByLine() {
     // 如果不想手动输入全部路径
     // 需要注意https://github.com/nodejs/help/issues/2907
-    const fileStream = fs.createReadStream('allText.txt');
+    // 这里的文件指向的目录生成时自动生成的下载脚本，放在这个txt文件里，默认在video下。你可以所以换位置，更改
+    const fileStream = fs.createReadStream('./video/allText.txt');
 
     const rl = readline.createInterface({
       input: fileStream,
