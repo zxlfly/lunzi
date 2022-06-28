@@ -1,3 +1,4 @@
+# 朋友们先整体看下项目，原理很简单的！先爬目录结构，然后下载。
 需要安装[ffmpeg](http://ffmpeg.org/download.html)  
 
 // 点开一个课程的列表页面，从url复制过来。  
