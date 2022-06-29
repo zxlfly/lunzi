@@ -25,7 +25,7 @@ import axios from 'axios'
 
   const courseUrl = ''
   const chapterUrl = ''
-  const mediaUrl = ''
+  const mediaUrl = 'https://api-vod.baoshiyun.com/vod/v1/platform/media/detail'
 
   const accessToken = ''
 
