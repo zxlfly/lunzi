@@ -48,6 +48,11 @@ import axios from 'axios'
     const sectionList = chapterInfo.section_list
     for (let j = 0; j < sectionList.length; j++) {
 
+      //此处做了一个判断，如果这项没有group_list的值，就直接退出目前的循环，1是防止做无用功，2是防止取不到值报错
+      if(!sectionList[j].group_list.length){
+        continue ;
+      }
+
       // console.log(sectionList[0].group_list[0].content_list[0].content.length);
       const groupInfo = sectionList[j].group_list[0]
       let name = groupInfo.group_name.replace(/\//g, '-')
