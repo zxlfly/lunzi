@@ -1,4 +1,5 @@
 # 从输入URL到页面显示发生了什么
+从空间的方向来说，经历了客户端-网络-服务器；从时间上输入url-走完网络数据回来-浏览器解析-排版-渲染和绘制。
 1. 首先浏览器会判断输入的是合法的url还是一个待搜索的关键词
 2. 根据地址栏输入的地址向DNS（Domain Name System）查询IP
    1. 域名系统（英文：Domain Name System，缩写：DNS）是互联网的一项服务。它作为将域名和IP地址相互映射的一个分布式数据库，能够使人更方便地访问互联网。
@@ -57,7 +58,7 @@ Referer: http://127.0.0.1:3000/
 Accept-Encoding: gzip, deflate, br
 Accept-Language: zh-CN,zh;q=0.9,en;q=0.8
 ```
-实际答应有三次请求第二次开始才带请求信息。这就是我们常说的**三次握手**导致的。
+实际应答有三次请求第二次开始才带请求信息。这就是我们常说的**三次握手**导致的。
 - 三次握手(连接匹配建立过程)
   - 客户端发送确认的同步请求
     - 携带序列号代表客户端
@@ -88,3 +89,14 @@ Accept-Language: zh-CN,zh;q=0.9,en;q=0.8
 
 # [HTTP 与 HTTPS 区别](https://www.runoob.com/w3cnote/http-vs-https.html)
 HTTPS 经由 HTTP 进行通信，但利用 SSL/TLS 来加密数据包。HTTPS 开发的主要目的，是提供对网站服务器的身份认证，保护交换数据的隐私与完整性。
+
+# HTTP1.0、HTTP1.1 和 HTTP2.0 的区别
+- 从HTTP/1.0到HTTP/2，都是利用TCP作为底层协议进行通信的。
+- HTTP/1.1，引进了长连接(keep-alive)，减少了建立和关闭连接的消耗和延迟。
+- HTTP/2，引入了多路复用：连接共享，提高了连接的利用率，降低延迟。
+
+# HTTP2.0和HTTP1.X相比的新特性
+- 新的二进制格式（Binary Format），HTTP1.x的解析是基于文本。基于文本协议的格式解析存在天然缺陷，文本的表现形式有多样性，要做到健壮性考虑的场景必然很多，二进制则不同，只认0和1的组合。基于这种考虑HTTP2.0的协议解析决定采用二进制格式，实现方便且健壮。
+- 多路复用（MultiPlexing），即连接共享，即每一个request都是是用作连接共享机制的。一个request对应一个id，这样一个连接上可以有多个request，每个连接的request可以随机的混杂在一起，接收方可以根据request的 id将request再归属到各自不同的服务端请求里面。
+- header压缩，如上文中所言，对前面提到过HTTP1.x的header带有大量信息，而且每次都要重复发送，HTTP2.0使用encoder来减少需要传输的header大小，通讯双方各自cache一份header fields表，既避免了重复header的传输，又减小了需要传输的大小。
+- 服务端推送（server push），同SPDY一样，HTTP2.0也具有server push功能。
