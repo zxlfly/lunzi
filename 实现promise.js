@@ -29,8 +29,8 @@ class MyPro {
     }
   }
   then(onFulfilled, onRejected) {
-    onFulfilled = typeof onFulfilled === "function" ? onFulfilled : (v) => { console.log('v', v); }
-    onRejected = typeof onRejected === "function" ? onRejected : (e) => { console.log('e', e); }
+    onFulfilled = typeof onFulfilled === "function" ? onFulfilled : value => value
+    onRejected = typeof onRejected === "function" ? onRejected : reason => { throw reason }
     if (this.status === MyPro.FULFILLED) {
       setTimeout(() => onFulfilled(this.value))
     } else if (this.status === MyPro.REJECTED) {
