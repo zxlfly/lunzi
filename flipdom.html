@@ -1,57 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8" />
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
 </head>
 
 <body>
-  <ul class="container">
-    <li>加</li>
-    <li>油</li>
-    <li>优</li>
-    <li>秀</li>
-  </ul>
-  <script>
-    // 倒序的三种方式
-    const lis = document.querySelectorAll(".container>li");
-    // 直接循环
-    for (let i = lis.length - 1; i > -1; i--) {
-      console.log(i);
-      document.querySelector(".container").appendChild(lis[i]);
-    }
-			// 利用Fragment
-			// var frag = document.createDocumentFragment()
-			// for (let i = lis.length - 1; i > -1; i--) {
-			// 	frag.appendChild(lis[i])
-			// }
-			// console.log('frag',frag);
-			// document.querySelectorAll('.container')[0].appendChild(frag)
-			// // 使用range
-			// var f =document.createDocumentFragment()
-			// for (let i = lis.length - 1; i > -1; i--) {
-			// 	let rangeObj=document.createRange();
-			// 	rangeObj.setStartBefore(lis[i]);
-			// 	rangeObj.setEndAfter(lis[i]);
-			// 	f.appendChild(rangeObj.extractContents())
-			// }
-			// console.log(f);
-			// document.querySelectorAll('.container')[0].appendChild(f)
-			// // 获取元素标签类型和数量
-			// var map = {};
-			// function findNodes(node) {
-			// 	if (node.nodeType === 1) {
-			// 		var tagName = node.nodeName;
-			// 		map[tagName] = map[tagName] ? map[tagName] + 1 : 1;
-			// 	}
-			// 	var children = node.childNodes;
-			// 	for (var i = 0; i < children.length; i++) {
-			// 		findNodes(children[i])
-			// 	}
-			// }
-			// findNodes(document);
-			// console.log(map)
-  </script>
+	<div id="id1">id1
+		<div id="id2">id2
+			<div id="id3">id3
+				<style>
+					#id4 {
+						color: aqua;
+					}
+				</style>
+				<div style="display:none" id="id4">
+					id4
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		var d1 = document.querySelector("#id1")
+		console.log(d1.innerHTML);
+		console.log(d1.innerText);
+		console.log(d1.textContent);
+	</script>
 </body>
 
 </html>

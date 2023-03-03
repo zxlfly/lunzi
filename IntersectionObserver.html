@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IntersectionObserver</title>
+</head>
+
+<body>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      height: 5000px;
+      border-top: 1px solid;
+    }
+
+    .red {
+      background: red !important;
+    }
+
+    #example {
+      transition: all .3s;
+      margin-top: 1500px;
+      width: 300px;
+      height: 300px;
+      background: #000;
+    }
+  </style>
+  <div class="container">
+    <div id="example">
+      // 可以用来实现图片懒加载 先给所有图片添加监听，等进入可视区替换上真正的地址，然后结束监听
+
+      // 埋点曝光，和懒加载类似，将显式阈值设置为1即全部显示触发回调函数
+
+      //可以实现上滑加载更多，可无限滚动
+    </div>
+  </div>
+  <script>
+    //构造函数的返回值是一个观察器实例。实例的observe方法可以指定观察哪个 DOM 节点
+    //目标元素的可见性变化时，就会调用观察器的回调函数callback
+    //一般会触发两次。一次是目标元素刚刚进入视口（开始可见），另一次是完全离开视口（开始不可见）。
+    //callback函数的参数（entries）是一个数组，每个成员都是一个IntersectionObserverEntry对象,被观察的对象
+    var io = new IntersectionObserver((entries) => {
+      console.log(entries);
+      entries.forEach(item => {
+        if (item.intersectionRatio === 1) {
+          console.log(2);
+          item.target.setAttribute("class", "red");
+          io.unobserve(item.target)
+        }
+      })
+    }, {
+      root: null,
+      threshold: 1
+    });
+
+
+    // 开始观察
+    //observe的参数是一个 DOM 节点对象。如果要观察多个节点，就要多次调用这个方法。
+    io.observe(document.getElementById('example'));
+
+    // 停止观察
+    // io.unobserve(element);
+
+    // 关闭观察器
+    // io.disconnect();
+  </script>
+</body>
+
+</html>

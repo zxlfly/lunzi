@@ -105,4 +105,5 @@ function deepCloneSimple(target) {
         // 如果不是对象而是原始数据类型，那么直接赋值
     } else { newObj = target; }
     // 返回最终结果 return newObj; 
+    return newObj
 }
